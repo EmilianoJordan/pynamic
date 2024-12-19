@@ -1,0 +1,15 @@
+x-service: &default-service
+  image: pynamic:latest
+  working_dir: /pynamic
+  volumes:
+    - .:/pynamic
+
+services:
+  bash:
+    <<: [*default-service]
+    entrypoint: /bin/bash
+
+  pycharm:
+    <<: [*default-service]
+    entrypoint: [ ]
+    command: [ ]
